@@ -1,6 +1,6 @@
-GIVEN a text editor web application
+<!-- GIVEN a text editor web application
 WHEN I open my application in my editor
-THEN I should see a client server folder structure
+THEN I should see a client server folder structure -->
 WHEN I run `npm run start` from the root directory
 THEN I find that my application should start up the backend and serve the client
 WHEN I run the text editor application from my terminal
