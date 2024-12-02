@@ -3,7 +3,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
+// DONE: Add and configure workbox plugins for a service worker and manifest file.
 
 module.exports = () => {
   return {
@@ -22,9 +22,12 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
         name: 'My Progressive Web App',
         short_name: 'MyPWA',
         description: 'My awesome Progressive Web App!',
+        start_url: './',
+        publicPath: './',
         background_color: '#ffffff',
         crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
         icons: [
@@ -50,7 +53,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
     ],
 
